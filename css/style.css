@@ -1,0 +1,17 @@
+.menu {
+  display: flex;
+  justify-content: flex-start; }
+  .menu .item-menu {
+    display: block;
+    height: 50px;
+    background: maroon;
+    border: 1px solid #000;
+    margin: 0 5px 0 0;
+    padding: 0 25px 0;
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+    -webkit-background-size: cover;
+    background-size: cover; }
+
+/*# sourceMappingURL=style.css.map */
