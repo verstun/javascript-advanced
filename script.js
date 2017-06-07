@@ -331,7 +331,7 @@ interviewQuestion('teacher')('John');*/
 
 /////////////////////////////////////////////
 // Lecture: Bind, call and apply
-
+/*
 var john = {
     name: 'John',
     age: 26,
@@ -401,4 +401,60 @@ function isFullAge(limit, el){
 var ages = arrayCalc(years, calculateAge);
 var fullJapan = arrayCalc(ages, isFullAge.bind(this, 20));
 console.log(ages);
-console.log(fullJapan);
+console.log(fullJapan);*/
+
+
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////////
+// CODING CHALLENGE
+
+(function(){ // we use IIFE for call this function anywhere in other code without danger for same variables
+    function Question(question, answers, correct) {
+        this.question = question;
+        this.answers = answers;
+        this.correct = correct;
+    }
+
+// prototype
+
+    Question.prototype.displayQuestion = function() {
+        console.log(this.question);
+        for (var i = 0; i < this.answers.length; i++) {
+            console.log(i + ': ' + this.answers[i]);
+        }
+    }
+
+    Question.prototype.checkAnswer = function(ans) {
+        if (ans === this.correct) {
+            console.log('Correct answer!');
+        }
+        else {
+            console.log('Wrong answer. Try again :-)');
+        }
+    }
+
+    var q1 = new Question('Is javascript is the coolest language in the world?',
+        ['Yes', 'No'],
+        0);
+    var q2 = new Question('What is the name of this course\'s teacher',
+        ['Jhon', 'Michel', 'Jonas'],
+        2);
+    var q3 = new Question('What does the best describe coding',
+        ['Boring', 'Hard', 'Fun','Tediuos'],
+        2);
+    var questions = [q1, q2, q3];
+    var n = Math.floor(Math.random() * questions.length);
+
+    questions[n].displayQuestion();
+
+    var answer = parseInt(prompt('Please select the correct answer.'));
+
+    questions[n].checkAnswer(answer);
+})();
+
